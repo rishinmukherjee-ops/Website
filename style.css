@@ -1,0 +1,243 @@
+/* Global Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Heading - Positioned at top of page, scales with viewport */
+.heading {
+    text-align: center;
+    padding: clamp(20px, 5vw, 60px) 5%;
+    width: 100%;
+    position: relative;
+}
+
+.heading img {
+    width: clamp(250px, 50vw, 600px);  /* Enlarged from 150px-400px to 200px-500px */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Navigation Buttons */
+.Buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.Buttons .Gallary,
+.Buttons .Admin {
+    padding: 8px 16px;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+.Buttons .Gallary:hover,
+.Buttons .Admin:hover {
+    background-color: #03285a;
+    color: white;
+}
+
+/* Marquee Highlight */
+.highlight {
+    margin-top: 20px;
+    font-size: clamp(16px, 3vw, 25px);
+    padding: 10px 0;
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+/* Container */
+.container {
+    padding: 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Events Section */
+.Events {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    border: 5px solid black;
+    border-radius: 2%;
+    position: relative;
+    padding: 2rem;
+    background-color: #03285a;
+    color: white;
+    overflow: hidden;
+}
+
+.Events .eves {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    margin-bottom: 15px;
+}
+
+.Events .eve {
+    font-size: clamp(16px, 3vw, 24px);
+    margin: 10px 0;
+}
+
+.Events .more_events {
+    padding: 10px 20px;
+    font-size: clamp(16px, 2.5vw, 24px);
+    border-radius: 12px;
+    background-color: #0549a1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: transform 0.2s;
+}
+
+.Events .more_events:hover {
+    transform: scale(1.05);
+}
+
+/* Logo in Events - white background */
+.Events .Logo {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* About Us Section */
+.About_Us {
+    border: 5px solid black;
+    border-radius: 2%;
+    position: relative;
+    padding: 2rem;
+    background-color: #03285a;
+    color: white;
+    margin-top: 50px;
+}
+
+.About_Us .about {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    margin-bottom: 20px;
+}
+
+.About_Us .text {
+    text-align: center;
+    line-height: 1.6;
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+.About_Us .memebers {
+    text-align: center;
+    font-size: clamp(18px, 3vw, 30px);
+    font-family: 'Arial Black', Gadget, sans-serif;
+    margin-top: 30px;
+}
+
+/* Contact Info Section */
+.Contact_info {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    border: 5px solid black;
+    border-radius: 2%;
+    position: relative;
+    padding: 2rem;
+    background-color: #03285a;
+    color: white;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.Contact_info .Contact {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    margin-bottom: 20px;
+}
+
+.Contact_info .info {
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.8;
+}
+
+/* EDS logo - stays inside Contact_info box */
+.Contact_info .eds {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Divider Line */
+.line {
+    border: 2px solid #000;
+    margin: 20px 0;
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+    .Events .Logo {
+        float: right;
+        margin: 0 0 20px 20px;
+    }
+    
+    .Contact_info .eds {
+        float: right;
+        margin: 0 0 20px 20px;
+    }
+    
+    .About_Us .text {
+        text-align: left;
+    }
+    
+    .Contact_info .info {
+        text-align: left;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 4%;
+    }
+    
+    .Buttons {
+        flex-direction: column;
+        gap: 8px;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .Buttons .Gallary,
+    .Buttons .Admin {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .Events,
+    .About_Us,
+    .Contact_info {
+        padding: 1.5rem;
+    }
+}

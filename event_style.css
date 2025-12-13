@@ -1,0 +1,213 @@
+/* Global Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Heading - Fixed at top of screen */
+.heading {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(80px, 15vw, 120px);
+    height: auto;
+    z-index: 1000;
+}
+
+.heading img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Navigation Buttons */
+.Buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.Buttons .Gallary,
+.Buttons .Admin {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.Buttons .Gallary:hover,
+.Buttons .Admin:hover {
+    background-color: #03285a;
+    color: white;
+}
+
+/* Container */
+.container {
+    padding: 120px 5% 5% 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 50vh;
+}
+
+/* Headings */
+.container .a,
+.container .b {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: clamp(20px, calc(5vw + 1rem), 35px);
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+/* Event Box */
+.box {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    border: 5px solid black;
+    border-radius: 2%;
+    padding: 2rem;
+    margin-top: 30px;
+    background-color: #03285a;
+    color: white;
+    overflow: hidden;
+}
+
+.box h2 {
+    font-size: clamp(20px, calc(4vw + 1rem), 30px);
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    font-size: clamp(16px, 2.5vw, 22px);
+    margin-bottom: 15px;
+}
+
+.box h4 {
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.6;
+    font-weight: normal;
+}
+
+/* Event Content Wrapper */
+.box .event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Text Content - FIXED for all aspect ratios */
+.box .text {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.6;
+}
+
+.box .text h4,
+.box .text p {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Event Images */
+.box .Lens {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Divider Line */
+.line {
+    border: 2px solid #000;
+    margin: 30px 0;
+}
+
+/* Desktop Layout - Side by side content and image */
+@media (min-width: 768px) {
+    .box .event-content {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        gap: 20px;
+        align-items: start;
+    }
+    
+    .box .text {
+        grid-column: 1;
+        max-width: 100%;
+    }
+    
+    .box .Lens {
+        margin: 0;
+        grid-column: 2;
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        padding: 100px 4% 4% 4%;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 100px 4% 4% 4%;
+    }
+    
+    .Buttons {
+        flex-direction: column;
+        gap: 8px;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .Buttons .Gallary,
+    .Buttons .Admin {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .box {
+        padding: 1.5rem;
+    }
+    
+    .heading {
+        width: clamp(60px, 20vw, 100px);
+        top: 15px;
+    }
+    
+    /* Text wraps properly on mobile */
+    .box .text {
+        text-align: left;
+    }
+}

@@ -77,7 +77,9 @@ img {
     border: none;
     cursor: pointer;
     margin: 20px 0;
+    margin-left: 20px;
     transition: transform 0.2s;
+    scale: 1.5;
 }
 
 .Events .more_events:hover {

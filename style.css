@@ -213,6 +213,16 @@ img {
     .Contact_info {
         padding: 1.5rem;
     }
+    
+    /* Center all content in Events section on mobile */
+    .Events .eve {
+        text-align: center;
+    }
+    
+    .Events .more_events {
+        display: block;
+        margin: 20px auto;
+    }
 }
 
 .pics {
